@@ -38,8 +38,9 @@ def fedavg(global_model, client_states):
             [client_state[key] for client_state in client_states], dim=0
         ).mean(dim=0)
 
-    global_model.load_state_dict(global_dict)
+    global_model.load_state(global_dict)
     return global_model
+
 
 
 # Evaluation
